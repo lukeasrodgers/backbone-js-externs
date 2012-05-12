@@ -20,13 +20,6 @@ var Backbone = {
     "noConflict": function () {},
     "emulateHTTP": {},
     "emulateJSON": {},
-    "Events": {
-        "on": function () {},
-        "off": function () {},
-        "trigger": function () {},
-        "bind": function () {},
-        "unbind": function () {}
-    },
     "Collection": function () {},
     "Router": function () {},
     "History": function () {},
@@ -34,41 +27,196 @@ var Backbone = {
     "sync": function () {},
     "wrapError": function () {}
 };
+
 /**
+ * @typedef {Object}
+ */
+Backbone.Events = {};
+
+/**
+ * @param {string} event
+ * @param {Function} callback
+ * @param {Object=} context
+ */
+Backbone.Events.on = function(event, callback, context) {};
+Backbone.Events.bind = Backbone.Events.on;
+
+/**
+ * @param {string=} event
+ * @param {Function=} callback
+ * @param {Object=} context
+ */
+Backbone.Events.off = function(event, callback, context) {};
+Backbone.Events.unbind = Backbone.Events.off;
+
+/**
+ * @param {string} event
+ * @param {...*} args
+ */
+Backbone.Events.trigger = function(event, args) {};
+
+/**
+ * @extends {Backbone.Events}
  * @constructor
  * @param {Object=} config
  */
 Backbone.Model = function(config) {};
-Backbone.Model.prototype = {
-    "on": function () {},
-    "off": function () {},
-    "trigger": function () {},
-    "bind": function () {},
-    "unbind": function () {},
-    "idAttribute": {},
-    "initialize": function () {},
-    "toJSON": function () {},
-    "get": function () {},
-    "escape": function () {},
-    "has": function () {},
-    "set": function () {},
-    "unset": function () {},
-    "clear": function () {},
-    "fetch": function () {},
-    "save": function () {},
-    "destroy": function () {},
-    "url": function () {},
-    "parse": function () {},
-    "clone": function () {},
-    "isNew": function () {},
-    "change": function () {},
-    "hasChanged": function () {},
-    "changedAttributes": function () {},
-    "previous": function () {},
-    "previousAttributes": function () {},
-    "isValid": function () {},
-    "_validate": function () {}
-};
+
+/**
+ * @param {Object} properties
+ * @param {Object=} classProperties
+ */
+Backbone.Model.prototype.extend = function(properties, classProperties) {};
+
+/**
+ * @param {...*} config
+ */
+Backbone.Model.prototype.initialize = function(config) {};
+
+/**
+ * @param {string} attribute
+ * @return {*}
+ */
+Backbone.Model.prototype.get = function(attribute) {};
+
+/**
+ * @param {string|Object} key
+ * @param {*} value
+ * @param {Object=} options
+ * @return {Backbone.Model}
+ */
+Backbone.Model.prototype.set = function(key, value, options) {};
+
+/**
+ * @param {string} attribute
+ * @return {string}
+ */
+Backbone.Model.prototype.escape = function(attribute) {};
+
+/**
+ * @param {string} attribute
+ * @return {boolean}
+ */
+Backbone.Model.prototype.has = function(attribute) {};
+
+/**
+ * @param {string} attribute
+ * @param {Object=} options
+ * @return {Backbone.Model}
+ */
+Backbone.Model.prototype.unset = function(attribute, options) {};
+
+/**
+ * @param {Object=} options
+ */
+Backbone.Model.prototype.clear = function(options) {};
+
+/** @type {number} */
+Backbone.Model.id;
+
+/** @type {string} */
+Backbone.Model.prototype.idAttribute;
+
+/** @type {number} */
+Backbone.Model.cid;
+
+/** @type {Object} */
+Backbone.Model.attributes;
+
+/** @type {Object} */
+Backbone.Model.changed;
+
+/** @type {Object|Function} */
+Backbone.Model.defaults;
+
+/**
+ * @return {Object}
+ */
+Backbone.Model.toJSON();
+
+/**
+ * @param {Object} options
+ * @return {Object} returns jQuery xhr
+ */
+Backbone.Model.prototype.fetch = function(options) {};
+
+/**
+ * @param {string|Object} key
+ * @param {*} value
+ * @param {Object=} options
+ * @return {boolean|Object}
+ */
+Backbone.Model.prototype.save = function(key, value, options) {};
+
+/**
+ * @param {Object} options
+ * @return {boolean|Object}
+ */
+Backbone.Model.prototype.destroy = function(options) {};
+
+/**
+ * @param {Object} attributes
+ */
+Backbone.Model.prototype.validate = function(attributes) {};
+
+/**
+ * @return {boolean}
+ */
+Backbone.Model.prototype.isValid = function() {};
+
+/**
+ * @return {string}
+ */
+Backbone.Model.prototype.url = function() {};
+
+/** @type {string|Function} */
+Backbone.Model.urlRoot;
+
+/**
+ * @param {Object} resp
+ * @param {Object} xhr
+ * @return {Object}
+ */
+Backbone.Model.prototype.parse = function(resp, xhr) {};
+
+/**
+ * @return {Backbone.Model}
+ */
+Backbone.Model.prototype.clone = function() {};
+
+/**
+ * @return {boolean}
+ */
+Backbone.Model.prototype.isNew = function() {};
+
+/**
+ * @return {Backbone.Model}
+ */
+Backbone.Model.prototype.change = function() {};
+
+/**
+ * @param {Object} attributes
+ * @return {boolean}
+ */
+Backbone.Model.prototype.hasChanged = function(attributes) {};
+
+/**
+ * @param {Object} attributes
+ * @return {Object}
+ */
+Backbone.Model.prototype.changedAttributes = function(attributes) {};
+
+/**
+ * @param {string} attribute
+ * @return {*}
+ */
+Backbone.Model.prototype.previous = function(attribute) {};
+
+/**
+ * @return {Object}
+ */
+Backbone.Model.prototype.previousAttributes = function() {};
+
 /**
  * @constructor
  */
