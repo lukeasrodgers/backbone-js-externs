@@ -31,7 +31,7 @@ var Backbone = {
 /**
  * @typedef {Object}
  */
-Backbone.Events = {};
+Backbone.Events;
 
 /**
  * @param {string} event
