@@ -215,7 +215,7 @@ Backbone.Model.prototype.change = function(options) {};
 Backbone.Model.prototype.hasChanged = function(attr) {};
 
 /**
- * @param {Object} attributes
+ * @param {Object=} attributes
  * @return {Object}
  */
 Backbone.Model.prototype.changedAttributes = function(attributes) {};
