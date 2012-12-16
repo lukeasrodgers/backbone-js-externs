@@ -123,22 +123,22 @@ Backbone.Model.prototype.unset = function(attribute, options) {};
 Backbone.Model.prototype.clear = function(options) {};
 
 /** @type {number} */
-Backbone.Model.id;
+Backbone.Model.prototype.id;
 
 /** @type {string} */
 Backbone.Model.prototype.idAttribute;
 
 /** @type {number} */
-Backbone.Model.cid;
+Backbone.Model.prototype.cid;
 
 /** @type {Object} */
-Backbone.Model.attributes;
+Backbone.Model.prototype.attributes;
 
 /** @type {Object} */
-Backbone.Model.changed;
+Backbone.Model.prototype.changed;
 
 /** @type {Object|Function} */
-Backbone.Model.defaults;
+Backbone.Model.prototype.defaults;
 
 /**
  * @return {Object}
