@@ -230,9 +230,12 @@ Backbone.Model.prototype.previous = function(attribute) {};
 Backbone.Model.prototype.previousAttributes = function() {};
 
 /**
+ * @extends {Backbone.Events}
  * @constructor
+ * @param {Object|Backbone.Model|Array.<Object>=} models
+ * @param {Object=} config
  */
-Backbone.Collection = function() {};
+Backbone.Collection = function(models, config) {};
 
 Backbone.Collection.prototype = {
     "trigger": function () {},
