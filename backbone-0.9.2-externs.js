@@ -241,7 +241,6 @@ Backbone.Collection.prototype = {
     "trigger": function () {},
     "initialize": function () {},
     "toJSON": function () {},
-    "getByCid": function () {},
     "sort": function () {},
     "pluck": function () {},
     "reset": function () {},
@@ -313,6 +312,12 @@ Backbone.Collection.prototype.at = function(index) {};
  * @return {Backbone.Model|undefined}
  */
 Backbone.Collection.prototype.get = function(id) {};
+
+/**
+ * @param {string|number} cid
+ * @return {Backbone.Model|undefined}
+ */
+Backbone.Collection.prototype.getByCid = function(cid) {};
 
 /**
  * @param {Object|Backbone.Model|Array.<Object>} models
