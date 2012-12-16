@@ -6,14 +6,14 @@ function module(name, lifecycle) {}
 
 /**
  * @param {string} title
- * @param {Number|Function} expected
+ * @param {number|Function} expected
  * @param {Function=} test_func
  */
 function test(title, expected, test_func){}
 
 /**
  * @param {string} name
- * @param {Number|Function} expected
+ * @param {number|Function} expected
  * @param {Function=} test_func
  */
 function asyncTest(name, expected, test_func){}
