@@ -349,3 +349,14 @@ Backbone.View.prototype.delegateEvents = function(events){};
  * @param {Object=} events
  */
 Backbone.View.prototype.undelegateEvents = function(events){};
+
+/**
+ * @param {Element|jQuery} element
+ * @param {boolean=} delegate
+ */
+Backbone.View.prototype.setElement = function(element, delegate){};
+
+/**
+ * @param {string} selector
+ */
+Backbone.View.prototype.$ = function(selector){};
