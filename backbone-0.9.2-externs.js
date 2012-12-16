@@ -147,6 +147,9 @@ Backbone.attributes;
  */
 Backbone.Model.toJSON();
 
+/** @type {number} */
+Backbone.Model.id;
+
 /**
  * @param {Object} options
  * @return {Object} returns jQuery xhr
