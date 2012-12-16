@@ -57,6 +57,13 @@ Backbone.Events.trigger = function(event, args) {};
 Backbone.wrapError = function(onError, originalModel, options){};
 
 /**
+ * @param {string=} method
+ * @param {Backbone.Model=} model
+ * @param {Object=} options
+ */
+Backbone.sync = function(method, model, options){};
+
+/**
  * @extends {Backbone.Events}
  * @constructor
  * @param {Object=} config
