@@ -72,6 +72,9 @@ Backbone.Model = function(config) {};
 
 Backbone.Model.prototype.on = Backbone.Events.on;
 Backbone.Model.prototype.off = Backbone.Events.off;
+Backbone.Model.prototype.trigger = Backbone.Events.trigger;
+Backbone.Model.prototype.bind = Backbone.Events.on;
+Backbone.Model.prototype.unbind = Backbone.Events.on;
 
 /**
  * @param {Object} properties
