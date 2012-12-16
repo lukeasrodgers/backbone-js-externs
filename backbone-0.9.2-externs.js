@@ -205,10 +205,10 @@ Backbone.Model.prototype.isNew = function() {};
 Backbone.Model.prototype.change = function() {};
 
 /**
- * @param {Object} attributes
+ * @param {string|number=} attr
  * @return {boolean}
  */
-Backbone.Model.prototype.hasChanged = function(attributes) {};
+Backbone.Model.prototype.hasChanged = function(attr) {};
 
 /**
  * @param {Object} attributes
