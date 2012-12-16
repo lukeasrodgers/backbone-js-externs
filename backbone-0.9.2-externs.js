@@ -248,7 +248,6 @@ Backbone.Collection.prototype = {
     "pluck": function () {},
     "reset": function () {},
     "fetch": function () {},
-    "create": function () {},
     "parse": function () {},
     "chain": function () {},
     "_reset": function () {},
@@ -333,6 +332,12 @@ Backbone.Collection.prototype.add = function(models, options){};
  * @param {Object=} options
  */
 Backbone.Collection.prototype.remove = function(models, options){};
+
+/**
+ * @param {Object|Backbone.Model} model
+ * @param {Object=} options
+ */
+Backbone.Collection.prototype.create = function(model, options){};
 
 /**
  * @param {Object} attrs
