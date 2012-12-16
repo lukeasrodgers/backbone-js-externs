@@ -245,7 +245,6 @@ Backbone.Collection.prototype = {
     "initialize": function () {},
     "toJSON": function () {},
     "sort": function () {},
-    "pluck": function () {},
     "fetch": function () {},
     "parse": function () {},
     "chain": function () {},
@@ -281,7 +280,6 @@ Backbone.Collection.prototype = {
     "rest": function () {},
     "last": function () {},
     "without": function () {},
-    "indexOf": function () {},
     "shuffle": function () {},
     "lastIndexOf": function () {},
     "isEmpty": function () {},
@@ -343,6 +341,42 @@ Backbone.Collection.prototype.create = function(model, options){};
  * @param {Object=} options
  */
 Backbone.Collection.prototype.reset = function(models, options){};
+
+/**
+ * @param {string} attr
+ * @return {Array}
+ */
+Backbone.Collection.prototype.pluck = function(attr){};
+
+/**
+ * @param {*} value
+ * @param {Object=} options
+ * @return {number|undefined}
+ */
+Backbone.Collection.prototype.indexOf = function(value, options){};
+
+/**
+ * @param {Object=} options
+ * @return {Backbone.Model|undefined}
+ */
+Backbone.Collection.prototype.shift = function(options){};
+
+/**
+ * @param {Backbone.Model} model
+ * @param {Object=} options
+ */
+Backbone.Collection.prototype.unshift = function(model, options){};
+
+/**
+ * @param {Object=} options
+ */
+Backbone.Collection.prototype.pop = function(options){};
+
+/**
+ * @param {Backbone.Model} model
+ * @param {Object=} options
+ */
+Backbone.Collection.prototype.push = function(model, options){};
 
 /**
  * @param {Object} attrs
