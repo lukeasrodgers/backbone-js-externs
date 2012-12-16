@@ -139,6 +139,9 @@ Backbone.Model.changed;
 /** @type {Object|Function} */
 Backbone.Model.defaults;
 
+/** @type {Object} */
+Backbone.attributes;
+
 /**
  * @return {Object}
  */
