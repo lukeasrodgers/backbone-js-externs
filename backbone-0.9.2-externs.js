@@ -238,22 +238,12 @@ Backbone.Model.prototype.previousAttributes = function() {};
  * @constructor
  */
 Backbone.Collection = function() {};
-/** @type {Array} */
-Backbone.Collection.prototype.models;
+
 Backbone.Collection.prototype = {
-    "on": function () {},
-    "off": function () {},
     "trigger": function () {},
-    "bind": function () {},
-    "unbind": function () {},
-    "model": function () {},
     "initialize": function () {},
     "toJSON": function () {},
-    "add": function () {},
-    "remove": function () {},
-    "get": function () {},
     "getByCid": function () {},
-    "at": function () {},
     "sort": function () {},
     "pluck": function () {},
     "reset": function () {},
@@ -299,6 +289,45 @@ Backbone.Collection.prototype = {
     "isEmpty": function () {},
     "groupBy": function () {}
 };
+
+/** @type {number} */
+Backbone.Collection.length;
+
+/** @type {Array} */
+Backbone.Collection.prototype.models;
+
+Backbone.Collection.prototype.on = Backbone.Events.on;
+Backbone.Collection.prototype.off = Backbone.Events.on;
+Backbone.Collection.prototype.bind = Backbone.Events.on;
+Backbone.Collection.prototype.unbind = Backbone.Events.on;
+
+/** @type {Backbone.Model} */
+Backbone.Collection.model;
+
+/**
+ * @param {string|number} index
+ * @return {Backbone.Model|undefined}
+ */
+Backbone.Collection.prototype.at = function(index) {};
+
+/**
+ * @param {string|number|Backbone.Model} id
+ * @return {Backbone.Model|undefined}
+ */
+Backbone.Collection.prototype.get = function(id) {};
+
+/**
+ * @param {Object|Backbone.Model|Array.<Object>} models
+ * @param {Object=} options
+ */
+Backbone.Collection.prototype.add = function(models, options){};
+
+/**
+ * @param {Object|Backbone.Model|Array.<Object>} models
+ * @param {Object=} options
+ */
+Backbone.Collection.prototype.remove = function(models, options){};
+
 Backbone.Router.prototype = {
     "on": function () {},
     "off": function () {},
