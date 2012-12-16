@@ -203,9 +203,10 @@ Backbone.Model.prototype.clone = function() {};
 Backbone.Model.prototype.isNew = function() {};
 
 /**
+ * @param {Object=} options
  * @return {Backbone.Model}
  */
-Backbone.Model.prototype.change = function() {};
+Backbone.Model.prototype.change = function(options) {};
 
 /**
  * @param {string|number=} attr
