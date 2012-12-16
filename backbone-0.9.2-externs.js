@@ -19,13 +19,7 @@ var Backbone = {
     "setDomLibrary": function () {},
     "noConflict": function () {},
     "emulateHTTP": {},
-    "emulateJSON": {},
-    "Collection": function () {},
-    "Router": function () {},
-    "History": function () {},
-    "View": function () {},
-    "sync": function () {},
-    "wrapError": function () {}
+    "emulateJSON": {}
 };
 
 /**
