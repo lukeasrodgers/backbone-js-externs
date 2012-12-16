@@ -286,7 +286,7 @@ Backbone.Collection.prototype = {
 };
 
 /** @type {number} */
-Backbone.Collection.length;
+Backbone.Collection.prototype.length;
 
 /** @type {Array} */
 Backbone.Collection.prototype.models;
