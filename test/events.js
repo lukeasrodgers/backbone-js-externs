@@ -1,6 +1,7 @@
   module("Backbone.Events");
 
   test("Events: on and trigger", function() {
+    /** @type {Backbone.Events} */
     var obj = { counter: 0 };
     _.extend(obj,Backbone.Events);
     obj.on('event', function() { obj.counter += 1; });
@@ -14,6 +15,7 @@
   });
 
   test("Events: binding and triggering multiple events", function() {
+    /** @type {Backbone.Events} */
     var obj = { counter: 0 };
     _.extend(obj,Backbone.Events);
 
@@ -34,7 +36,9 @@
   });
 
   test("Events: trigger all for each event", function() {
-    var a, b, obj = { counter: 0 };
+    var a, b;
+    /** @type {Backbone.Events} */
+    var obj = { counter: 0 };
     _.extend(obj, Backbone.Events);
     obj.on('all', function(event) {
       obj.counter++;
@@ -48,6 +52,7 @@
   });
 
   test("Events: on, then unbind all functions", function() {
+    /** @type {Backbone.Events} */
     var obj = { counter: 0 };
     _.extend(obj,Backbone.Events);
     var callback = function() { obj.counter += 1; };
@@ -59,6 +64,7 @@
   });
 
   test("Events: bind two callbacks, unbind only one", function() {
+    /** @type {Backbone.Events} */
     var obj = { counterA: 0, counterB: 0 };
     _.extend(obj,Backbone.Events);
     var callback = function() { obj.counterA += 1; };
@@ -72,6 +78,7 @@
   });
 
   test("Events: unbind a callback in the midst of it firing", function() {
+    /** @type {Backbone.Events} */
     var obj = {counter: 0};
     _.extend(obj, Backbone.Events);
     var callback = function() {
@@ -86,6 +93,7 @@
   });
 
   test("Events: two binds that unbind themeselves", function() {
+    /** @type {Backbone.Events} */
     var obj = { counterA: 0, counterB: 0 };
     _.extend(obj,Backbone.Events);
     var incrA = function(){ obj.counterA += 1; obj.unbind('event', incrA); };
@@ -109,6 +117,7 @@
       ok(true, '`this` was bound to the callback');
     };
 
+    /** @type {Backbone.Events} */
     var obj = _.extend({},Backbone.Events);
 
     obj.bind('event', function () { this.assertTrue(); }, (new TestClass));
@@ -119,6 +128,7 @@
 
   test("Events: nested trigger with unbind", function () {
     expect(1);
+    /** @type {Backbone.Events} */
     var obj = { counter: 0 };
     _.extend(obj, Backbone.Events);
     var incr1 = function(){ obj.counter += 1; obj.unbind('event', incr1); obj.trigger('event'); };
@@ -130,7 +140,9 @@
   });
 
   test("Events: callback list is not altered during trigger", function () {
-    var counter = 0, obj = _.extend({}, Backbone.Events);
+    var counter = 0;
+    /** @type {Backbone.Events} */
+    var obj = _.extend({}, Backbone.Events);
     var incr = function(){ counter++; };
     obj.bind('event', function(){ obj.bind('event', incr).bind('all', incr); })
     .trigger('event');
@@ -148,6 +160,7 @@
   });
 
   test("remove all events for a specific context", 4, function() {
+    /** @type {Backbone.Events} */
     var obj = _.extend({}, Backbone.Events);
     obj.on('x y all', function() { ok(true); });
     obj.on('x y all', function() { ok(false); }, obj);
@@ -156,6 +169,7 @@
   });
 
   test("remove all events for a specific callback", 4, function() {
+    /** @type {Backbone.Events} */
     var obj = _.extend({}, Backbone.Events);
     var success = function() { ok(true); };
     var fail = function() { ok(false); };
