@@ -56,6 +56,13 @@ Backbone.Events.unbind = Backbone.Events.off;
 Backbone.Events.trigger = function(event, args) {};
 
 /**
+ * @param {Function} onError
+ * @param {Backbone.Model} originalModel
+ * @param {Object} options
+ */
+Backbone.wrapError = function(onError, originalModel, options){};
+
+/**
  * @extends {Backbone.Events}
  * @constructor
  * @param {Object=} config
