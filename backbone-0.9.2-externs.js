@@ -84,7 +84,7 @@ Backbone.Model.prototype.get = function(attribute) {};
 
 /**
  * @param {string|Object} key
- * @param {*} value
+ * @param {*=} value
  * @param {Object=} options
  * @return {Backbone.Model}
  */
