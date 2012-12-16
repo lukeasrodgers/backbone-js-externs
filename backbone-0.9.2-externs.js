@@ -246,7 +246,6 @@ Backbone.Collection.prototype = {
     "toJSON": function () {},
     "sort": function () {},
     "pluck": function () {},
-    "reset": function () {},
     "fetch": function () {},
     "parse": function () {},
     "chain": function () {},
@@ -338,6 +337,12 @@ Backbone.Collection.prototype.remove = function(models, options){};
  * @param {Object=} options
  */
 Backbone.Collection.prototype.create = function(model, options){};
+
+/**
+ * @param {Array=} models
+ * @param {Object=} options
+ */
+Backbone.Collection.prototype.reset = function(models, options){};
 
 /**
  * @param {Object} attrs
