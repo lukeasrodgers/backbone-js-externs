@@ -326,6 +326,12 @@ Backbone.Collection.prototype.add = function(models, options){};
  */
 Backbone.Collection.prototype.remove = function(models, options){};
 
+/**
+ * @param {Object} attrs
+ * @return {Array}
+ */
+Backbone.Collection.prototype.where = function(attrs) {};
+
 Backbone.Router.prototype = {
     "on": function () {},
     "off": function () {},
