@@ -162,7 +162,7 @@ Backbone.Model.prototype.fetch = function(options) {};
 Backbone.Model.prototype.save = function(key, value, options) {};
 
 /**
- * @param {Object} options
+ * @param {Object=} options
  * @return {boolean|Object}
  */
 Backbone.Model.prototype.destroy = function(options) {};
