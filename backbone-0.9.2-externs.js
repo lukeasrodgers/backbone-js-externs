@@ -362,7 +362,7 @@ Backbone.Collection.prototype.indexOf = function(value, options){};
 Backbone.Collection.prototype.shift = function(options){};
 
 /**
- * @param {Backbone.Model} model
+ * @param {Backbone.Model|Object} model
  * @param {Object=} options
  */
 Backbone.Collection.prototype.unshift = function(model, options){};
