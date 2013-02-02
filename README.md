@@ -24,7 +24,7 @@ You can do this for yourself thus.
 - install closure compiler
 - make sure ruby is installed
 - `export CC_PATH={path/to/compiler.jar}`
-- from this directory: `cd test && ruby compile_javascript.rb`
+- from this directory: `cd test && ruby test_externs.rb`
 
 This will spit out a bunch of errors. Many of them are irrelevant,
 related to missing jQuery externs, etc., while others indicate genuine
