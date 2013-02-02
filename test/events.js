@@ -110,6 +110,9 @@
   test("Events: bind a callback with a supplied context", function () {
     expect(1);
 
+    /**
+     * @constructor
+     */
     var TestClass = function () {
       return this;
     };
@@ -120,7 +123,7 @@
     /** @type {Backbone.Events} */
     var obj = _.extend({},Backbone.Events);
 
-    obj.bind('event', function () { this.assertTrue(); }, (new TestClass));
+    obj.bind('event', function () { this.assertTrue(); }, (new TestClass()));
 
     obj.trigger('event');
 
