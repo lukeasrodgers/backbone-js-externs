@@ -406,10 +406,10 @@
     equal(col.indexOf(b), 1);
     equal(col.size(), 4);
     equal(col.rest().length, 3);
-    ok(!_.include(col.rest()), a);
-    ok(!_.include(col.rest()), d);
+    ok(!_.include(col.rest(), a));
+    ok(!_.include(col.rest(), d));
     ok(!col.isEmpty());
-    ok(!_.include(col.without(d)), d);
+    ok(!_.include(col.without(d), d));
     equal(col.max(function(model){ return model.id; }).id, 3);
     equal(col.min(function(model){ return model.id; }).id, 0);
     same(col.chain()
