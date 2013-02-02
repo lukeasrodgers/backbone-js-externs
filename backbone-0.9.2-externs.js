@@ -413,6 +413,9 @@ Backbone.History.prototype = {
     "navigate": function () {},
     "_updateHash": function () {}
 };
+/** @type {boolean} */
+Backbone.History.started;
+
 /**
  * @param {...*} args
  * @constructor
