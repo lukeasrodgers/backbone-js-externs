@@ -26,9 +26,9 @@ You can do this for yourself thus.
 - `export CC_PATH={path/to/compiler.jar}`
 - from this directory: `cd test && ruby test_externs.rb`
 
-This will spit out a bunch of errors. Many of them are irrelevant,
-related to missing jQuery externs, etc., while others indicate genuine
-shortcommings (to be rectified) in the Backbone externs file.
+This will spit out some errors, all of which *should* be false
+positives, related to some deliberately funky ways that the Backbone
+tests call Backbone and Underscore methods.
 
 ## TODO
 
