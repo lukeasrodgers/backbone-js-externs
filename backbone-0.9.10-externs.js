@@ -50,6 +50,20 @@ Backbone.Events.unbind = Backbone.Events.off;
 Backbone.Events.trigger = function(event, args) {};
 
 /**
+ * @param {Object} other
+ * @param {string} event
+ * @param {Function} callback
+ */
+Backbone.Events.listenTo = function(other, event, callback) {};
+
+/**
+ * @param {Object=} other
+ * @param {string=} event
+ * @param {Function=} callback
+ */
+Backbone.Events.stopListening = function(other, event, callback) {};
+
+/**
  * @param {Function} onError
  * @param {Backbone.Model} originalModel
  * @param {Object} options
