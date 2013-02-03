@@ -149,7 +149,7 @@ Backbone.Model.prototype.defaults;
 Backbone.Model.toJSON();
 
 /**
- * @param {Object} options
+ * @param {Object=} options
  * @return {Object} returns jQuery xhr
  */
 Backbone.Model.prototype.fetch = function(options) {};
@@ -245,7 +245,6 @@ Backbone.Collection.prototype = {
     "initialize": function () {},
     "toJSON": function () {},
     "sort": function () {},
-    "fetch": function () {},
     "parse": function () {},
     "chain": function () {},
     "_reset": function () {},
@@ -299,6 +298,12 @@ Backbone.Collection.prototype.unbind = Backbone.Events.on;
 
 /** @type {Backbone.Model} */
 Backbone.Collection.model;
+
+/**
+ * @param {Object=} options
+ * @return {Object} returns jQuery xhr
+ */
+Backbone.Collection.prototype.fetch = function(options) {};
 
 /**
  * @param {string|number} index
