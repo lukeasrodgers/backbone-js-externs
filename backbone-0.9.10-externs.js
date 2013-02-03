@@ -436,29 +436,50 @@ Backbone.Router.prototype = {
     "unbind": function () {},
     "initialize": function () {},
     "route": function () {},
-    "navigate": function () {},
     "_bindRoutes": function () {},
     "_routeToRegExp": function () {},
     "_extractParameters": function () {}
 };
-Backbone.History.prototype = {
-    "on": function () {},
-    "off": function () {},
-    "trigger": function () {},
-    "bind": function () {},
-    "unbind": function () {},
-    "interval": {},
-    "getFragment": function () {},
-    "start": function () {},
-    "stop": function () {},
-    "route": function () {},
-    "checkUrl": function () {},
-    "loadUrl": function () {},
-    "navigate": function () {},
-    "_updateHash": function () {}
-};
+/**
+ * @constructor
+ */
+Backbone.History = function() {};
+
 /** @type {boolean} */
 Backbone.History.started;
+
+/** @type {boolean} */
+Backbone.History.prototype.started;
+
+/**
+ * @param {Object=} options
+ */
+Backbone.History.prototype.start = function(options) {};
+
+/**
+ * @param {Object=} options
+ */
+Backbone.History.prototype.stop = function(options) {};
+
+/**
+ * @param {Object=} e
+ */
+Backbone.History.prototype.checkUrl = function(e) {};
+
+/**
+ * @param {string} fragment
+ * @param {boolean|Object=} options
+ */
+Backbone.History.prototype.navigate = function(fragment, options) {};
+
+/**
+ * @param {string=} fragment
+ * @param {boolean=} forcePushState
+ */
+Backbone.History.prototype.getFragment = function(fragment, forcePushState) {};
+
+Backbone.History.prototype.off = Backbone.Events.off;
+Backbone.History.prototype.on = Backbone.Events.on;
 
 /**
  * @param {...*} args

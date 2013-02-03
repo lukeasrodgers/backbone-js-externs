@@ -35,7 +35,8 @@
 
     setup: function() {
       location = new Location('http://example.com');
-      Backbone.history = _.extend(new Backbone.History, {location: location});
+      /** @type {Backbone.History} */
+      Backbone.history = _.extend(new Backbone.History(), {location: location});
       router = new Router({testing: 101});
       Backbone.history.interval = 9;
       Backbone.history.start({pushState: false});
@@ -250,6 +251,7 @@
     location.replace('http://example.com/root/foo');
 
     Backbone.history.stop();
+    /** @type {Backbone.History} */
     Backbone.history = _.extend(new Backbone.History, {location: location});
     Backbone.history.start({root: '/root', hashChange: false, silent: true});
     strictEqual(Backbone.history.getFragment(), 'foo');
@@ -289,7 +291,8 @@
   test("#1185 - Use pathname when hashChange is not wanted.", 1, function() {
     Backbone.history.stop();
     location.replace('http://example.com/path/name#hash');
-    Backbone.history = _.extend(new Backbone.History, {location: location});
+    /** @type {Backbone.History} */
+    Backbone.history = _.extend(new Backbone.History(), {location: location});
     Backbone.history.start({hashChange: false});
     var fragment = Backbone.history.getFragment();
     strictEqual(fragment, location.pathname.replace(/^\//, ''));
@@ -298,7 +301,8 @@
   test("#1206 - Strip leading slash before location.assign.", 1, function() {
     Backbone.history.stop();
     location.replace('http://example.com/root/');
-    Backbone.history = _.extend(new Backbone.History, {location: location});
+    /** @type {Backbone.History} */
+    Backbone.history = _.extend(new Backbone.History(), {location: location});
     Backbone.history.start({hashChange: false, root: '/root/'});
     location.assign = function(pathname) {
       strictEqual(pathname, '/root/fragment');
@@ -309,7 +313,8 @@
   test("#1387 - Root fragment without trailing slash.", 1, function() {
     Backbone.history.stop();
     location.replace('http://example.com/root');
-    Backbone.history = _.extend(new Backbone.History, {location: location});
+    /** @type {Backbone.History} */
+    Backbone.history = _.extend(new Backbone.History(), {location: location});
     Backbone.history.start({hashChange: false, root: '/root/', silent: true});
     strictEqual(Backbone.history.getFragment(), '');
   });
@@ -337,7 +342,8 @@
   test("Normalize root.", 1, function() {
     Backbone.history.stop();
     location.replace('http://example.com/root');
-    Backbone.history = _.extend(new Backbone.History, {
+    /** @type {Backbone.History} */
+    Backbone.history = _.extend(new Backbone.History(), {
       location: location,
       history: {
         pushState: function(state, title, url) {
@@ -356,7 +362,8 @@
   test("Normalize root.", 1, function() {
     Backbone.history.stop();
     location.replace('http://example.com/root#fragment');
-    Backbone.history = _.extend(new Backbone.History, {
+    /** @type {Backbone.History} */
+    Backbone.history = _.extend(new Backbone.History(), {
       location: location,
       history: {
         pushState: function(state, title, url) {},
@@ -374,7 +381,8 @@
   test("Normalize root.", 1, function() {
     Backbone.history.stop();
     location.replace('http://example.com/root');
-    Backbone.history = _.extend(new Backbone.History, {location: location});
+    /** @type {Backbone.History} */
+    Backbone.history = _.extend(new Backbone.History(), {location: location});
     Backbone.history.loadUrl = function() { ok(true); };
     Backbone.history.start({
       pushState: true,
@@ -385,7 +393,8 @@
   test("Normalize root - leading slash.", 1, function() {
     Backbone.history.stop();
     location.replace('http://example.com/root');
-    Backbone.history = _.extend(new Backbone.History, {
+    /** @type {Backbone.History} */
+    Backbone.history = _.extend(new Backbone.History(), {
       location: location,
       history: {
         pushState: function(){},
@@ -399,7 +408,8 @@
   test("Transition from hashChange to pushState.", 1, function() {
     Backbone.history.stop();
     location.replace('http://example.com/root#x/y');
-    Backbone.history = _.extend(new Backbone.History, {
+    /** @type {Backbone.History} */
+    Backbone.history = _.extend(new Backbone.History(), {
       location: location,
       history: {
         pushState: function(){},
@@ -417,7 +427,8 @@
   test("#1619: Router: Normalize empty root", 1, function() {
     Backbone.history.stop();
     location.replace('http://example.com/');
-    Backbone.history = _.extend(new Backbone.History, {
+    /** @type {Backbone.History} */
+    Backbone.history = _.extend(new Backbone.History(), {
       location: location,
       history: {
         pushState: function(){},
@@ -431,7 +442,8 @@
   test("#1619: Router: nagivate with empty root", 1, function() {
     Backbone.history.stop();
     location.replace('http://example.com/');
-    Backbone.history = _.extend(new Backbone.History, {
+    /** @type {Backbone.History} */
+    Backbone.history = _.extend(new Backbone.History(), {
       location: location,
       history: {
         pushState: function(state, title, url) {
@@ -453,7 +465,8 @@
     location.replace = function(url) {
       strictEqual(url, '/root/?a=b#x/y');
     };
-    Backbone.history = _.extend(new Backbone.History, {
+    /** @type {Backbone.History} */
+    Backbone.history = _.extend(new Backbone.History(), {
       location: location,
       history: {
         pushState: null,
@@ -469,7 +482,8 @@
   test("#1695 - hashChange to pushState with search.", 1, function() {
     Backbone.history.stop();
     location.replace('http://example.com/root?a=b#x/y');
-    Backbone.history = _.extend(new Backbone.History, {
+    /** @type {Backbone.History} */
+    Backbone.history = _.extend(new Backbone.History(), {
       location: location,
       history: {
         pushState: function(){},
