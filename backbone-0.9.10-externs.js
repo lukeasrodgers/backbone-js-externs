@@ -379,6 +379,12 @@ Backbone.Collection.prototype.pop = function(options){};
 Backbone.Collection.prototype.push = function(model, options){};
 
 /**
+ * @param {number=} begin
+ * @param {number=} end
+ */
+Backbone.Collection.prototype.slice = function(begin, end) {};
+
+/**
  * @param {Object} attrs
  * @return {Array}
  */
