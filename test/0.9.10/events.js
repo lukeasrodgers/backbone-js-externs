@@ -1,6 +1,7 @@
   module("Backbone.Events");
 
   test("on and trigger", 2, function() {
+    /** @type {Backbone.Events} */
     var obj = { counter: 0 };
     _.extend(obj,Backbone.Events);
     obj.on('event', function() { obj.counter += 1; });
@@ -14,6 +15,7 @@
   });
 
   test("binding and triggering multiple events", 4, function() {
+    /** @type {Backbone.Events} */
     var obj = { counter: 0 };
     _.extend(obj, Backbone.Events);
 
@@ -34,6 +36,7 @@
   });
 
   test("binding and triggering with event maps", function() {
+    /** @type {Backbone.Events} */
     var obj = { counter: 0 };
     _.extend(obj, Backbone.Events);
 
@@ -65,7 +68,9 @@
   });
 
   test("listenTo and stopListening", 1, function() {
+    /** @type {Backbone.Events} */
     var a = _.extend({}, Backbone.Events);
+    /** @type {Backbone.Events} */
     var b = _.extend({}, Backbone.Events);
     a.listenTo(b, 'all', function(){ ok(true); });
     b.trigger('anything');
@@ -75,7 +80,9 @@
   });
 
   test("listenTo and stopListening with event maps", 4, function() {
+    /** @type {Backbone.Events} */
     var a = _.extend({}, Backbone.Events);
+    /** @type {Backbone.Events} */
     var b = _.extend({}, Backbone.Events);
     var cb = function(){ ok(true); };
     a.listenTo(b, {event: cb});
@@ -89,7 +96,9 @@
   });
 
   test("stopListening with omitted args", 2, function () {
+    /** @type {Backbone.Events} */
     var a = _.extend({}, Backbone.Events);
+    /** @type {Backbone.Events} */
     var b = _.extend({}, Backbone.Events);
     var cb = function () { ok(true); };
     a.listenTo(b, 'event', cb);
@@ -100,12 +109,14 @@
   });
 
   test("listenTo yourself", 1, function(){
+    /** @type {Backbone.Events} */
     var e = _.extend({}, Backbone.Events);
     e.listenTo(e, "foo", function(){ ok(true); });
     e.trigger("foo");
   });
 
   test("listenTo yourself cleans yourself up with stopListening", 1, function(){
+    /** @type {Backbone.Events} */
     var e = _.extend({}, Backbone.Events);
     e.listenTo(e, "foo", function(){ ok(true); });
     e.trigger("foo");
@@ -114,6 +125,7 @@
   });
 
   test("listenTo with empty callback doesn't throw an error", 1, function(){
+    /** @type {Backbone.Events} */
     var e = _.extend({}, Backbone.Events);
     e.listenTo(e, "foo", null);
     e.trigger("foo");
@@ -121,7 +133,9 @@
   });
 
   test("trigger all for each event", 3, function() {
-    var a, b, obj = { counter: 0 };
+    var a, b;
+    /** @type {Backbone.Events} */
+    var obj = { counter: 0 };
     _.extend(obj, Backbone.Events);
     obj.on('all', function(event) {
       obj.counter++;
@@ -135,6 +149,7 @@
   });
 
   test("on, then unbind all functions", 1, function() {
+    /** @type {Backbone.Events} */
     var obj = { counter: 0 };
     _.extend(obj,Backbone.Events);
     var callback = function() { obj.counter += 1; };
@@ -146,6 +161,7 @@
   });
 
   test("bind two callbacks, unbind only one", 2, function() {
+    /** @type {Backbone.Events} */
     var obj = { counterA: 0, counterB: 0 };
     _.extend(obj,Backbone.Events);
     var callback = function() { obj.counterA += 1; };
@@ -159,6 +175,7 @@
   });
 
   test("unbind a callback in the midst of it firing", 1, function() {
+    /** @type {Backbone.Events} */
     var obj = {counter: 0};
     _.extend(obj, Backbone.Events);
     var callback = function() {
@@ -173,6 +190,7 @@
   });
 
   test("two binds that unbind themeselves", 2, function() {
+    /** @type {Backbone.Events} */
     var obj = { counterA: 0, counterB: 0 };
     _.extend(obj,Backbone.Events);
     var incrA = function(){ obj.counterA += 1; obj.off('event', incrA); };
@@ -187,6 +205,9 @@
   });
 
   test("bind a callback with a supplied context", 1, function () {
+    /**
+     * @constructor
+     */
     var TestClass = function () {
       return this;
     };
@@ -194,12 +215,14 @@
       ok(true, '`this` was bound to the callback');
     };
 
+    /** @type {Backbone.Events} */
     var obj = _.extend({},Backbone.Events);
-    obj.on('event', function () { this.assertTrue(); }, (new TestClass));
+    obj.on('event', function () { this.assertTrue(); }, (new TestClass()));
     obj.trigger('event');
   });
 
   test("nested trigger with unbind", 1, function () {
+    /** @type {Backbone.Events} */
     var obj = { counter: 0 };
     _.extend(obj, Backbone.Events);
     var incr1 = function(){ obj.counter += 1; obj.off('event', incr1); obj.trigger('event'); };
@@ -211,7 +234,9 @@
   });
 
   test("callback list is not altered during trigger", 2, function () {
-    var counter = 0, obj = _.extend({}, Backbone.Events);
+    var counter = 0;
+    /** @type {Backbone.Events} */
+    var obj = _.extend({}, Backbone.Events);
     var incr = function(){ counter++; };
     obj.on('event', function(){ obj.on('event', incr).on('all', incr); })
     .trigger('event');
@@ -226,6 +251,7 @@
 
   test("#1282 - 'all' callback list is retrieved after each event.", 1, function() {
     var counter = 0;
+    /** @type {Backbone.Events} */
     var obj = _.extend({}, Backbone.Events);
     var incr = function(){ counter++; };
     obj.on('x', function() {
@@ -240,6 +266,7 @@
   });
 
   test("remove all events for a specific context", 4, function() {
+    /** @type {Backbone.Events} */
     var obj = _.extend({}, Backbone.Events);
     obj.on('x y all', function() { ok(true); });
     obj.on('x y all', function() { ok(false); }, obj);
@@ -258,6 +285,7 @@
   });
 
   test("off is chainable", 3, function() {
+    /** @type {Backbone.Events} */
     var obj = _.extend({}, Backbone.Events);
     // With no events
     ok(obj.off() === obj);
@@ -270,6 +298,7 @@
   });
 
   test("#1310 - off does not skip consecutive events", 0, function() {
+    /** @type {Backbone.Events} */
     var obj = _.extend({}, Backbone.Events);
     obj.on('event', function() { ok(false); }, obj);
     obj.on('event', function() { ok(false); }, obj);
@@ -279,6 +308,7 @@
 
   test("once", 2, function() {
     // Same as the previous test, but we use once rather than having to explicitly unbind
+    /** @type {Backbone.Events} */
     var obj = { counterA: 0, counterB: 0 };
     _.extend(obj, Backbone.Events);
     var incrA = function(){ obj.counterA += 1; obj.trigger('event'); };
@@ -293,7 +323,9 @@
   test("once variant one", 3, function() {
     var f = function(){ ok(true); };
 
+    /** @type {Backbone.Events} */
     var a = _.extend({}, Backbone.Events).once('event', f);
+    /** @type {Backbone.Events} */
     var b = _.extend({}, Backbone.Events).on('event', f);
 
     a.trigger('event');
@@ -304,6 +336,7 @@
 
   test("once variant two", 3, function() {
     var f = function(){ ok(true); };
+    /** @type {Backbone.Events} */
     var obj = _.extend({}, Backbone.Events);
 
     obj
@@ -315,6 +348,7 @@
 
   test("once with off", 0, function() {
     var f = function(){ ok(true); };
+    /** @type {Backbone.Events} */
     var obj = _.extend({}, Backbone.Events);
 
     obj.once('event', f);
@@ -323,6 +357,7 @@
   });
 
   test("once with event maps", function() {
+    /** @type {Backbone.Events} */
     var obj = { counter: 0 };
     _.extend(obj, Backbone.Events);
 
@@ -351,6 +386,7 @@
 
   test("once with off only by context", 0, function() {
     var context = {};
+    /** @type {Backbone.Events} */
     var obj = _.extend({}, Backbone.Events);
     obj.once('event', function(){ ok(false); }, context);
     obj.off(null, null, context);
@@ -363,6 +399,7 @@
 
   asyncTest("once with asynchronous events", 1, function() {
     var func = _.debounce(function() { ok(true); start(); }, 50);
+    /** @type {Backbone.Events} */
     var obj = _.extend({}, Backbone.Events).once('async', func);
 
     obj.trigger('async');
@@ -371,11 +408,13 @@
 
   test("once with multiple events.", 2, function() {
     var obj = _.extend({}, Backbone.Events);
+    /** @type {Backbone.Events} */
     obj.once('x y', function() { ok(true); });
     obj.trigger('x y');
   });
 
   test("Off during iteration with once.", 2, function() {
+    /** @type {Backbone.Events} */
     var obj = _.extend({}, Backbone.Events);
     var f = function(){ this.off('event', f); };
     obj.on('event', f);
