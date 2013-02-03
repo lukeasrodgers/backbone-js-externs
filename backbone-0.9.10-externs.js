@@ -89,6 +89,8 @@ Backbone.Model.prototype.off = Backbone.Events.off;
 Backbone.Model.prototype.trigger = Backbone.Events.trigger;
 Backbone.Model.prototype.bind = Backbone.Events.on;
 Backbone.Model.prototype.unbind = Backbone.Events.on;
+Backbone.Model.prototype.listenTo = Backbone.Events.listenTo;
+Backbone.Model.prototype.stopListening = Backbone.Events.stopListening;
 
 /**
  * @param {Object} properties
@@ -169,8 +171,8 @@ Backbone.Model.toJSON();
 Backbone.Model.prototype.fetch = function(options) {};
 
 /**
- * @param {string|Object} key
- * @param {*} value
+ * @param {string|Object=} key
+ * @param {*=} value
  * @param {Object=} options
  * @return {boolean|Object}
  */

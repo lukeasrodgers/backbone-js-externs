@@ -155,8 +155,8 @@ Backbone.Model.toJSON();
 Backbone.Model.prototype.fetch = function(options) {};
 
 /**
- * @param {string|Object} key
- * @param {*} value
+ * @param {string|Object=} key
+ * @param {*=} value
  * @param {Object=} options
  * @return {boolean|Object}
  */
