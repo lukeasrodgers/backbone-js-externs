@@ -20,8 +20,7 @@ externs (i.e. ensuring that all necessary Backbone methods are
 defined, that they specify the right parameters and return types, etc.)
 is to just grab the qunit test code from the Backbone library, specify
 some additional externs for qunit, underscore, jquery, and json, and run
-the qunit underscore tests through Closure Compiler with advanced
-optimizations on.
+the tests through Closure Compiler with advanced optimizations on.
 
 You can do this for yourself thus.
 
