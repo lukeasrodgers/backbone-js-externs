@@ -245,7 +245,6 @@ Backbone.Collection.prototype = {
     "initialize": function () {},
     "toJSON": function () {},
     "sort": function () {},
-    "fetch": function () {},
     "parse": function () {},
     "chain": function () {},
     "_reset": function () {},
