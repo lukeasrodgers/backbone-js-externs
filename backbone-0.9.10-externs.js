@@ -467,6 +467,8 @@ Backbone.History.started;
 Backbone.View = function(args){};
 /** @type {string} */
 Backbone.View.prototype.tagName;
+/** @type {{id: string, className: string, tagName: string}} */
+Backbone.View.prototype.options;
 /**
  * @param {...*} args
  */
