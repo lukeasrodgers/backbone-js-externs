@@ -304,6 +304,13 @@ Backbone.Collection.model;
 Backbone.Collection.prototype.fetch = function(options) {};
 
 /**
+ * @param {Object|Array.<Object>} models
+ * @param {Object=} options
+ * @return {Object} returns jQuery xhr
+ */
+Backbone.Collection.prototype.update = function(models, options) {};
+
+/**
  * @param {string|number} index
  * @return {Backbone.Model|undefined}
  */
