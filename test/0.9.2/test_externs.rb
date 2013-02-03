@@ -1,6 +1,6 @@
 require 'fileutils'
 
-base = "#{File.expand_path(File.dirname(__FILE__))}/../"
+base = "#{File.expand_path(File.dirname(__FILE__))}/../../"
 externs_dir = base
 
 # compile base command
@@ -18,12 +18,12 @@ cmd << " --externs test/json.js"
 cmd << " --externs test/underscore-1.3.3.js "
 cmd << " --externs test/jquery-1.7-externs.js "
 cmd << " --externs backbone-0.9.2-externs.js "
-cmd << " --js test/collection.js"
-cmd << " --js test/events.js"
-cmd << " --js test/model.js"
-cmd << " --js test/router.js"
-cmd << " --js test/sync.js"
-cmd << " --js test/view.js"
+cmd << " --js test/0.9.2/collection.js"
+cmd << " --js test/0.9.2/events.js"
+cmd << " --js test/0.9.2/model.js"
+cmd << " --js test/0.9.2/router.js"
+cmd << " --js test/0.9.2/sync.js"
+cmd << " --js test/0.9.2/view.js"
 `#{cmd}`
 compile_okay = $?.exitstatus == 0
 if (!compile_okay)
