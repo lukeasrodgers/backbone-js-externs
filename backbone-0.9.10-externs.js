@@ -270,7 +270,6 @@ Backbone.Collection.prototype = {
     "invoke": function () {},
     "max": function () {},
     "min": function () {},
-    "sortBy": function () {},
     "sortedIndex": function () {},
     "toArray": function () {},
     "size": function () {},
@@ -281,8 +280,7 @@ Backbone.Collection.prototype = {
     "without": function () {},
     "shuffle": function () {},
     "lastIndexOf": function () {},
-    "isEmpty": function () {},
-    "groupBy": function () {}
+    "isEmpty": function () {}
 };
 
 /** @type {number} */
@@ -394,6 +392,18 @@ Backbone.Collection.prototype.slice = function(begin, end) {};
  * @return {Array}
  */
 Backbone.Collection.prototype.where = function(attrs) {};
+
+/**
+ * @param {Function|string} iterator
+ * @param {Object=} context
+ */
+Backbone.Collection.prototype.sortBy = function(iterator, context) {};
+
+/**
+ * @param {Function|string} iterator
+ * @param {Object=} context
+ */
+Backbone.Collection.prototype.groupBy = function(iterator, context) {};
 
 Backbone.Router.prototype = {
     "on": function () {},
