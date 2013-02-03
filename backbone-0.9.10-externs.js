@@ -292,9 +292,9 @@ Backbone.Collection.prototype.length;
 Backbone.Collection.prototype.models;
 
 Backbone.Collection.prototype.on = Backbone.Events.on;
-Backbone.Collection.prototype.off = Backbone.Events.on;
+Backbone.Collection.prototype.off = Backbone.Events.off;
 Backbone.Collection.prototype.bind = Backbone.Events.on;
-Backbone.Collection.prototype.unbind = Backbone.Events.on;
+Backbone.Collection.prototype.unbind = Backbone.Events.off;
 
 /** @type {Backbone.Model} */
 Backbone.Collection.model;
