@@ -453,6 +453,35 @@ Backbone.History.prototype.stopListening = Backbone.Events.stopListening;
 
 /** @type {boolean} */
 Backbone.History.started;
+/** @type {boolean} */
+Backbone.History.prototype.started;
+
+/**
+ * @param {Object=} options
+ */
+Backbone.History.prototype.start = function(options) {};
+
+/**
+ * @param {Object=} options
+ */
+Backbone.History.prototype.stop = function(options) {};
+
+/**
+ * @param {Object=} e
+ */
+Backbone.History.prototype.checkUrl = function(e) {};
+
+/**
+ * @param {string} fragment
+ * @param {boolean|Object=} options
+ */
+Backbone.History.prototype.navigate = function(fragment, options) {};
+
+/**
+ * @param {string=} fragment
+ * @param {boolean=} forcePushState
+ */
+Backbone.History.prototype.getFragment = function(fragment, forcePushState) {};
 
 /**
  * @param {...*} args
