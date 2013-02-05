@@ -268,7 +268,6 @@ Backbone.Model.prototype.previousAttributes = function() {};
 Backbone.Collection = function(models, config) {};
 
 Backbone.Collection.prototype = {
-    "trigger": function () {},
     "initialize": function () {},
     "toJSON": function () {},
     "sort": function () {},
@@ -309,6 +308,15 @@ Backbone.Collection.prototype = {
     "lastIndexOf": function () {},
     "isEmpty": function () {}
 };
+
+Backbone.Collection.prototype.on = Backbone.Events.on;
+Backbone.Collection.prototype.off = Backbone.Events.off;
+Backbone.Collection.prototype.trigger = Backbone.Events.trigger;
+Backbone.Collection.prototype.bind = Backbone.Events.on;
+Backbone.Collection.prototype.unbind = Backbone.Events.on;
+Backbone.Collection.prototype.once = Backbone.Events.once;
+Backbone.Collection.prototype.listenTo = Backbone.Events.listenTo;
+Backbone.Collection.prototype.stopListening = Backbone.Events.stopListening;
 
 /** @type {number} */
 Backbone.Collection.prototype.length;
@@ -440,21 +448,35 @@ Backbone.Collection.prototype.sortBy = function(iterator, context) {};
 Backbone.Collection.prototype.groupBy = function(iterator, context) {};
 
 Backbone.Router.prototype = {
-    "on": function () {},
-    "off": function () {},
-    "trigger": function () {},
-    "bind": function () {},
-    "unbind": function () {},
     "initialize": function () {},
     "route": function () {},
     "_bindRoutes": function () {},
     "_routeToRegExp": function () {},
     "_extractParameters": function () {}
 };
+
+Backbone.Router.prototype.on = Backbone.Events.on;
+Backbone.Router.prototype.off = Backbone.Events.off;
+Backbone.Router.prototype.trigger = Backbone.Events.trigger;
+Backbone.Router.prototype.bind = Backbone.Events.on;
+Backbone.Router.prototype.unbind = Backbone.Events.on;
+Backbone.Router.prototype.once = Backbone.Events.once;
+Backbone.Router.prototype.listenTo = Backbone.Events.listenTo;
+Backbone.Router.prototype.stopListening = Backbone.Events.stopListening;
+
 /**
  * @constructor
  */
 Backbone.History = function() {};
+
+Backbone.History.prototype.on = Backbone.Events.on;
+Backbone.History.prototype.off = Backbone.Events.off;
+Backbone.History.prototype.trigger = Backbone.Events.trigger;
+Backbone.History.prototype.bind = Backbone.Events.on;
+Backbone.History.prototype.unbind = Backbone.Events.on;
+Backbone.History.prototype.once = Backbone.Events.once;
+Backbone.History.prototype.listenTo = Backbone.Events.listenTo;
+Backbone.History.prototype.stopListening = Backbone.Events.stopListening;
 
 /** @type {boolean} */
 Backbone.History.started;
@@ -489,14 +511,21 @@ Backbone.History.prototype.navigate = function(fragment, options) {};
  */
 Backbone.History.prototype.getFragment = function(fragment, forcePushState) {};
 
-Backbone.History.prototype.off = Backbone.Events.off;
-Backbone.History.prototype.on = Backbone.Events.on;
-
 /**
  * @param {...*} args
  * @constructor
  */
 Backbone.View = function(args){};
+
+Backbone.View.prototype.on = Backbone.Events.on;
+Backbone.View.prototype.off = Backbone.Events.off;
+Backbone.View.prototype.trigger = Backbone.Events.trigger;
+Backbone.View.prototype.bind = Backbone.Events.on;
+Backbone.View.prototype.unbind = Backbone.Events.on;
+Backbone.View.prototype.once = Backbone.Events.once;
+Backbone.View.prototype.listenTo = Backbone.Events.listenTo;
+Backbone.View.prototype.stopListening = Backbone.Events.stopListening;
+
 /** @type {string} */
 Backbone.View.prototype.tagName;
 /** @type {{id: string, className: string, tagName: string}} */
