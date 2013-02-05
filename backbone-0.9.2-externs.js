@@ -241,8 +241,13 @@ Backbone.Model.prototype.previousAttributes = function() {};
  */
 Backbone.Collection = function(models, config) {};
 
+/**
+ * @param {...*} args
+ */
+Backbone.Collection.prototype.initialize = function(args) {};
+
+
 Backbone.Collection.prototype = {
-    "initialize": function () {},
     "sort": function () {},
     "parse": function () {},
     "chain": function () {},
@@ -414,13 +419,17 @@ Backbone.Collection.prototype.sortBy = function(iterator, context) {};
 Backbone.Collection.prototype.groupBy = function(iterator, context) {};
 
 Backbone.Router.prototype = {
-    "initialize": function () {},
     "route": function () {},
     "navigate": function () {},
     "_bindRoutes": function () {},
     "_routeToRegExp": function () {},
     "_extractParameters": function () {}
 };
+
+/**
+ * @param {...*} args
+ */
+Backbone.Router.prototype.initialize = function(args) {};
 
 Backbone.Router.prototype.on = Backbone.Events.on;
 Backbone.Router.prototype.off = Backbone.Events.off;
