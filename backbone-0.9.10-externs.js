@@ -50,6 +50,13 @@ Backbone.Events.unbind = Backbone.Events.off;
 Backbone.Events.trigger = function(event, args) {};
 
 /**
+ * @param {string} event
+ * @param {Function} callback
+ * @param {Object=} context
+ */
+Backbone.Events.once = function(event, callback, context) {};
+
+/**
  * @param {Object} other
  * @param {string} event
  * @param {Function} callback
@@ -92,6 +99,7 @@ Backbone.Model.prototype.off = Backbone.Events.off;
 Backbone.Model.prototype.trigger = Backbone.Events.trigger;
 Backbone.Model.prototype.bind = Backbone.Events.on;
 Backbone.Model.prototype.unbind = Backbone.Events.on;
+Backbone.Model.prototype.once = Backbone.Events.once;
 Backbone.Model.prototype.listenTo = Backbone.Events.listenTo;
 Backbone.Model.prototype.stopListening = Backbone.Events.stopListening;
 
