@@ -171,9 +171,10 @@ Backbone.Model.prototype.changed;
 Backbone.Model.prototype.defaults;
 
 /**
+ * @param {Object=} options
  * @return {Object}
  */
-Backbone.Model.toJSON();
+Backbone.Model.prototype.toJSON = function(options) {};
 
 /**
  * @param {Object=} options
@@ -269,7 +270,6 @@ Backbone.Collection = function(models, config) {};
 
 Backbone.Collection.prototype = {
     "initialize": function () {},
-    "toJSON": function () {},
     "sort": function () {},
     "parse": function () {},
     "chain": function () {},
@@ -308,6 +308,12 @@ Backbone.Collection.prototype = {
     "lastIndexOf": function () {},
     "isEmpty": function () {}
 };
+
+/**
+ * @param {Object=} options
+ * @return {Array.<Object>}
+ */
+Backbone.Collection.prototype.toJSON = function(options) {};
 
 Backbone.Collection.prototype.on = Backbone.Events.on;
 Backbone.Collection.prototype.off = Backbone.Events.off;
