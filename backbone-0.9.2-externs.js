@@ -246,10 +246,10 @@ Backbone.Collection = function(models, config) {};
  */
 Backbone.Collection.prototype.initialize = function(args) {};
 
-
-Backbone.Collection.prototype = {
-    "sort": function () {}
-};
+/**
+ * @param {Object=} options
+ */
+Backbone.Collection.prototype.sort = function(options) {};
 
 /**
  * @param {Object} resp
