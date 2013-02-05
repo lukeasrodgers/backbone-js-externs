@@ -275,40 +275,47 @@ Backbone.Collection.prototype.initialize = function(args) {};
 
 
 Backbone.Collection.prototype = {
-    "sort": function () {},
-    "parse": function () {},
-    "chain": function () {},
-    "forEach": function () {},
-    "each": function () {},
-    "map": function () {},
-    "reduce": function () {},
-    "reduceRight": function () {},
-    "find": function () {},
-    "detect": function () {},
-    "filter": function () {},
-    "select": function () {},
-    "reject": function () {},
-    "every": function () {},
-    "all": function () {},
-    "some": function () {},
-    "any": function () {},
-    "include": function () {},
-    "contains": function () {},
-    "invoke": function () {},
-    "max": function () {},
-    "min": function () {},
-    "sortedIndex": function () {},
-    "toArray": function () {},
-    "size": function () {},
-    "first": function () {},
-    "initial": function () {},
-    "rest": function () {},
-    "last": function () {},
-    "without": function () {},
-    "shuffle": function () {},
-    "lastIndexOf": function () {},
-    "isEmpty": function () {}
+    "sort": function () {}
 };
+
+/**
+ * @param {Object} resp
+ * @param {Object} xhr
+ * @return {Object}
+ */
+Backbone.Collection.prototype.parse = function(resp, xhr) {};
+
+Backbone.Collection.prototype.map = _.prototype.map;
+Backbone.Collection.prototype.reduce = _.prototype.reduce;
+Backbone.Collection.prototype.reduceRight = _.prototype.reduceRight;
+Backbone.Collection.prototype.each = _.prototype.each;
+Backbone.Collection.prototype.forEach = _.prototype.forEach;
+Backbone.Collection.prototype.find = _.prototype.find;
+Backbone.Collection.prototype.detect = _.prototype.detect;
+Backbone.Collection.prototype.filter = _.prototype.filter;
+Backbone.Collection.prototype.select = _.prototype.select;
+Backbone.Collection.prototype.reject = _.prototype.reject;
+Backbone.Collection.prototype.every = _.prototype.every;
+Backbone.Collection.prototype.all = _.prototype.all;
+Backbone.Collection.prototype.any = _.prototype.any;
+Backbone.Collection.prototype.some = _.prototype.some;
+Backbone.Collection.prototype.include = _.prototype.include;
+Backbone.Collection.prototype.contains = _.prototype.contains;
+Backbone.Collection.prototype.invoke = _.prototype.invoke;
+Backbone.Collection.prototype.min = _.prototype.min;
+Backbone.Collection.prototype.max = _.prototype.max;
+Backbone.Collection.prototype.chain = _.prototype.chain;
+Backbone.Collection.prototype.sortedIndex = _.prototype.sortedIndex;
+Backbone.Collection.prototype.toArray = _.prototype.toArray;
+Backbone.Collection.prototype.size = _.prototype.size;
+Backbone.Collection.prototype.first = _.prototype.first;
+Backbone.Collection.prototype.initial = _.prototype.initial;
+Backbone.Collection.prototype.rest = _.prototype.rest;
+Backbone.Collection.prototype.last = _.prototype.last;
+Backbone.Collection.prototype.without = _.prototype.without;
+Backbone.Collection.prototype.shuffle = _.prototype.shuffle;
+Backbone.Collection.prototype.lastIndexOf = _.prototype.lastIndexOf;
+Backbone.Collection.prototype.isEmpty = _.prototype.isEmpty;
 
 /**
  * @param {Object=} options
