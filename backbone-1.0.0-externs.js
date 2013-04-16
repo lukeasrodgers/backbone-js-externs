@@ -268,6 +268,9 @@ Backbone.Model.prototype.previousAttributes = function() {};
  */
 Backbone.Collection = function(models, config) {};
 
+/** @type {Object} */
+Backbone.Collection.prototype.syncArgs;
+
 /**
  * @param {...*} args
  */
