@@ -402,7 +402,7 @@ Backbone.Collection.prototype.remove = function(models, options){};
 Backbone.Collection.prototype.create = function(model, options){};
 
 /**
- * @param {Array=} models
+ * @param {Array|Object=} models
  * @param {Object=} options
  */
 Backbone.Collection.prototype.reset = function(models, options){};
