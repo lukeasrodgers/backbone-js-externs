@@ -448,9 +448,16 @@ Backbone.Collection.prototype.slice = function(begin, end) {};
 
 /**
  * @param {Object} attrs
+ * @param {boolean=} first
  * @return {Array}
  */
-Backbone.Collection.prototype.where = function(attrs) {};
+Backbone.Collection.prototype.where = function(attrs, first) {};
+
+/**
+ * @param {Object} attrs
+ * @return {Object}
+ */
+Backbone.Collection.prototype.findWhere = function(attrs) {};
 
 /**
  * @param {Function|string} iterator
