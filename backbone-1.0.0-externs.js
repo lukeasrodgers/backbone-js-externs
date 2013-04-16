@@ -271,6 +271,9 @@ Backbone.Collection = function(models, config) {};
 /** @type {Object} */
 Backbone.Collection.prototype.syncArgs;
 
+/** @type {Array} */
+Backbone.Collection.prototype.previousModels;
+
 /**
  * @param {...*} args
  */
