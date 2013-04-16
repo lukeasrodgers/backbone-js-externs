@@ -408,6 +408,12 @@ Backbone.Collection.prototype.create = function(model, options){};
 Backbone.Collection.prototype.reset = function(models, options){};
 
 /**
+ * @param {Array|Object=} models
+ * @param {Object=} options
+ */
+Backbone.Collection.prototype.set = function(models, options){};
+
+/**
  * @param {string} attr
  * @return {Array}
  */
