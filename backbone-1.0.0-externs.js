@@ -103,6 +103,13 @@ Backbone.Model.prototype.once = Backbone.Events.once;
 Backbone.Model.prototype.listenTo = Backbone.Events.listenTo;
 Backbone.Model.prototype.stopListening = Backbone.Events.stopListening;
 
+Backbone.Model.prototype.keys = _.prototype.keys;
+Backbone.Model.prototype.values = _.prototype.values;
+Backbone.Model.prototype.pairs = _.prototype.pairs;
+Backbone.Model.prototype.invert = _.prototype.invert;
+Backbone.Model.prototype.pick = _.prototype.pick;
+Backbone.Model.prototype.omit = _.prototype.omit;
+
 /**
  * @param {Object} properties
  * @param {Object=} classProperties
