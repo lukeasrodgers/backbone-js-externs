@@ -5,6 +5,7 @@ the following versions:
 
 - 0.9.2
 - 0.9.10 (RC for 1.0)
+- 1.0.0
 
 This is a work in progress, though should be stable enough for use as
 part of your javascript minification process.
@@ -36,5 +37,4 @@ tests call Backbone and Underscore methods.
 
 ## TODO
 
-- cleanup for 0.9.2 and 0.9.10
-- externs for 1.0. when it comes out
+- general cleanup
