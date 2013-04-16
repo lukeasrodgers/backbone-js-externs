@@ -66,9 +66,10 @@ Backbone.sync = function(method, model, options){};
 /**
  * @extends {Backbone.Events}
  * @constructor
- * @param {Object=} config
+ * @param {Object=} attrs
+ * @param {Object=} options
  */
-Backbone.Model = function(config) {};
+Backbone.Model = function(attrs, options) {};
 
 Backbone.Model.prototype.on = Backbone.Events.on;
 Backbone.Model.prototype.off = Backbone.Events.off;
