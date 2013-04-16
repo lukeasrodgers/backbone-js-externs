@@ -64,6 +64,13 @@ Backbone.Events.once = function(event, callback, context) {};
 Backbone.Events.listenTo = function(other, event, callback) {};
 
 /**
+ * @param {Object} other
+ * @param {string} event
+ * @param {Function} callback
+ */
+Backbone.Events.listenToOnce = function(other, event, callback) {};
+
+/**
  * @param {Object=} other
  * @param {string=} event
  * @param {Function=} callback
@@ -101,6 +108,7 @@ Backbone.Model.prototype.bind = Backbone.Events.on;
 Backbone.Model.prototype.unbind = Backbone.Events.on;
 Backbone.Model.prototype.once = Backbone.Events.once;
 Backbone.Model.prototype.listenTo = Backbone.Events.listenTo;
+Backbone.Model.prototype.listenToOnce = Backbone.Events.listenToOnce;
 Backbone.Model.prototype.stopListening = Backbone.Events.stopListening;
 
 Backbone.Model.prototype.keys = _.prototype.keys;
@@ -343,6 +351,7 @@ Backbone.Collection.prototype.bind = Backbone.Events.on;
 Backbone.Collection.prototype.unbind = Backbone.Events.on;
 Backbone.Collection.prototype.once = Backbone.Events.once;
 Backbone.Collection.prototype.listenTo = Backbone.Events.listenTo;
+Backbone.Collection.prototype.listenToOnce = Backbone.Events.listenToOnce;
 Backbone.Collection.prototype.stopListening = Backbone.Events.stopListening;
 
 /** @type {number} */
@@ -506,6 +515,7 @@ Backbone.Router.prototype.bind = Backbone.Events.on;
 Backbone.Router.prototype.unbind = Backbone.Events.on;
 Backbone.Router.prototype.once = Backbone.Events.once;
 Backbone.Router.prototype.listenTo = Backbone.Events.listenTo;
+Backbone.Router.prototype.listenToOnce = Backbone.Events.listenToOnce;
 Backbone.Router.prototype.stopListening = Backbone.Events.stopListening;
 
 /**
@@ -520,6 +530,7 @@ Backbone.History.prototype.bind = Backbone.Events.on;
 Backbone.History.prototype.unbind = Backbone.Events.on;
 Backbone.History.prototype.once = Backbone.Events.once;
 Backbone.History.prototype.listenTo = Backbone.Events.listenTo;
+Backbone.History.prototype.listenToOnce = Backbone.Events.listenToOnce;
 Backbone.History.prototype.stopListening = Backbone.Events.stopListening;
 
 /** @type {boolean} */
@@ -568,6 +579,7 @@ Backbone.View.prototype.bind = Backbone.Events.on;
 Backbone.View.prototype.unbind = Backbone.Events.on;
 Backbone.View.prototype.once = Backbone.Events.once;
 Backbone.View.prototype.listenTo = Backbone.Events.listenTo;
+Backbone.View.prototype.listenToOnce = Backbone.Events.listenToOnce;
 Backbone.View.prototype.stopListening = Backbone.Events.stopListening;
 
 /** @type {string} */
