@@ -8,10 +8,6 @@
     lastArgs = args;
   }
 
-  var Location = function(href) {
-    this.replace(href);
-  };
-
   _.extend(Location.prototype, {
 
     replace: function(href) {
