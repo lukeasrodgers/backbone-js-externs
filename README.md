@@ -35,3 +35,5 @@ You can do this for yourself thus.
 This will spit out some errors, all of which *should* be false
 positives, related to some deliberately funky ways that the Backbone
 tests call Backbone and Underscore methods.
+
+Licensed under the MIT licence.
