@@ -6,6 +6,7 @@ the following versions:
 - 0.9.2
 - 0.9.10 (RC for 1.0)
 - 1.0.0
+- 1.1.0
 
 This is a work in progress, though should be stable enough for use as
 part of your javascript minification process.
@@ -34,7 +35,3 @@ You can do this for yourself thus.
 This will spit out some errors, all of which *should* be false
 positives, related to some deliberately funky ways that the Backbone
 tests call Backbone and Underscore methods.
-
-## TODO
-
-- general cleanup
