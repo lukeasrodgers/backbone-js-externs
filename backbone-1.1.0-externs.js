@@ -100,7 +100,7 @@ Backbone.sync = function(method, model, options){};
 Backbone.Model = function(attrs, options) {};
 
 /** @type {*} */
-Backbone.Model.prototoype.validationError;
+Backbone.Model.prototype.validationError;
 
 Backbone.Model.prototype.on = Backbone.Events.on;
 Backbone.Model.prototype.off = Backbone.Events.off;
