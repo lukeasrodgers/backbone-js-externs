@@ -186,6 +186,9 @@ Backbone.Model.prototype.changed;
 /** @type {Object|Function} */
 Backbone.Model.prototype.defaults;
 
+/** @type {Object} */
+Backbone.Model.prototype.collection;
+
 /**
  * @param {Object=} options
  * @return {Object}
