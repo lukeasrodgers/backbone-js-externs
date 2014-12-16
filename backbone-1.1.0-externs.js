@@ -596,6 +596,25 @@ Backbone.View.prototype.stopListening = Backbone.Events.stopListening;
 
 /** @type {string} */
 Backbone.View.prototype.tagName;
+
+/** @type {Backbone.Model} */
+Backbone.View.prototype.model;
+
+/** @type {Backbone.Collection} */
+Backbone.View.prototype.collection;
+
+/** @type {number|string} */
+Backbone.View.prototype.id;
+
+/** @type {Object} */
+Backbone.View.prototype.attributes;
+
+/** @type {string} */
+Backbone.View.prototype.className;
+
+/** @type {*} */
+Backbone.View.prototype.events;
+
 /** @type {{id: string, className: string, tagName: string}} */
 Backbone.View.prototype.options;
 /**
