@@ -118,6 +118,7 @@ Backbone.Model.prototype.pairs = _.prototype.pairs;
 Backbone.Model.prototype.invert = _.prototype.invert;
 Backbone.Model.prototype.pick = _.prototype.pick;
 Backbone.Model.prototype.omit = _.prototype.omit;
+Backbone.Model.prototype.isEmpty = _.prototype.isEmpty;
 
 /**
  * @param {Object} properties
@@ -155,6 +156,12 @@ Backbone.Model.prototype.escape = function(attribute) {};
  * @return {boolean}
  */
 Backbone.Model.prototype.has = function(attribute) {};
+
+/**
+ * @param {string} attribute
+ * @return {boolean}
+ */
+Backbone.Model.prototype.matches = function(attribute) {};
 
 /**
  * @param {string} attribute
@@ -349,6 +356,8 @@ Backbone.Collection.prototype.difference = _.prototype.without;
 Backbone.Collection.prototype.shuffle = _.prototype.shuffle;
 Backbone.Collection.prototype.lastIndexOf = _.prototype.lastIndexOf;
 Backbone.Collection.prototype.isEmpty = _.prototype.isEmpty;
+Backbone.Collection.prototype.partition = _.prototype.partition;
+Backbone.Collection.prototype.sample = _.prototype.sample;
 
 /**
  * @param {Object=} options
@@ -577,6 +586,13 @@ Backbone.History.prototype.navigate = function(fragment, options) {};
  * @param {boolean=} forcePushState
  */
 Backbone.History.prototype.getFragment = function(fragment, forcePushState) {};
+
+Backbone.History.prototype.matchRoot = function() {};
+
+/**
+ * @param {string=} fragment
+ */
+Backbone.History.prototype.decodeFragment = function(fragment) {};
 
 /**
  * @param {...*} args
